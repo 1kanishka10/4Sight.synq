@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        surface: "#FFFFFF",
-        canvas: "#F4F7F9",
+        surface: "#151823",
+        canvas: "#0B0D14",
         sky: {
           DEFAULT: "#83B3CA",
           50: "#EDF4F7",
@@ -18,7 +18,7 @@ export default {
         slate: {
           DEFAULT: "#5C5C68",
         },
-        ink: "#000013",
+        ink: "#F4F5F7",
         critical: "#C1442D",
         high: "#C17A1F",
         medium: "#1F7A5C",
