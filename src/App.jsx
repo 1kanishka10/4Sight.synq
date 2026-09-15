@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { GraduationCap, Bell } from "lucide-react";
+import { Bell } from "lucide-react";
 import { Sidebar, MobileNav } from "./components/Sidebar";
 import { ImportButton } from "./components/ImportButton";
 import { SynqMark } from "./components/SynqMark";
@@ -28,18 +28,25 @@ export default function App() {
         <header className="glass sticky top-0 z-30 flex items-center justify-between border-b border-white/60 px-5 py-4 lg:px-8">
           <div className="flex items-center gap-2 lg:hidden">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-ocean text-white">
-                           <SynqMark size={18} />
+              <SynqMark size={18} />
             </div>
-                        <span className="font-display text-base font-bold text-ink">Synq</span>
+            <span className="font-display text-base font-bold text-ink">Synq</span>
           </div>
-                   <div className="flex items-center gap-2">
+
+          <span className="hidden text-sm font-medium text-slate lg:block">
+            {SECTION_LABEL[tab]}
+          </span>
+
+          <div className="flex items-center gap-2">
             <ImportButton />
-            <button className="relative rounded-full p-2 text-slate hover:bg-white" aria-label="Notifications">
+            <button
+              className="relative rounded-full p-2 text-slate hover:bg-white"
+              aria-label="Notifications"
+            >
               <Bell size={18} />
               <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-critical" />
             </button>
           </div>
-          </button>
         </header>
 
         <main className="flex-1 px-5 pb-24 pt-6 lg:px-8 lg:pb-10">
