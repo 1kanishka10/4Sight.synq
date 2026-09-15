@@ -1,0 +1,36 @@
+{
+  "messages_in": 50,
+  "threads": 5,
+  "duplicates_collapsed": 8,
+  "noise_dropped": 22,
+  "now": 5,
+  "discover": 7,
+  "missed": 8,
+  "items_total": 20,
+  "noiseExamples": [
+    {
+      "id": "msg_003",
+      "why": "Students guessing at each other about a classroom. LH1, LH5, IT 405 and ECE 308 all proposed."
+    },
+    {
+      "id": "msg_004",
+      "why": "A question about interview order with no answer in the thread."
+    },
+    {
+      "id": "msg_006",
+      "why": "Unverified student report about where the syllabus lives."
+    },
+    {
+      "id": "msg_007",
+      "why": "Lecture hall locked. Live chatter from 8 September."
+    },
+    {
+      "id": "msg_008",
+      "why": "Room dispute during a class, with a threat to mark everyone absent. Now past."
+    },
+    {
+      "id": "msg_023",
+      "why": "Holiday speculation the students themselves say needs confirming with teachers."
+    }
+  ]
+}
