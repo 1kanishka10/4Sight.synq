@@ -100,7 +100,7 @@ export function DeadlinesSection() {
             <DetailRow icon={FileText} label="Submission" value={selected.submission} />
             <DetailRow icon={User} label="Contact" value={selected.contact} />
 
-            {href(selected.actionLink) ? (
+                        {href(selected.actionLink) ? (
               
                 href={href(selected.actionLink)}
                 target="_blank"
