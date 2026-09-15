@@ -101,7 +101,7 @@ export function DeadlinesSection() {
             <DetailRow icon={User} label="Contact" value={selected.contact} />
 
                         {href(selected.actionLink) ? (
-              
+              <a
                 href={href(selected.actionLink)}
                 target="_blank"
                 rel="noreferrer"
