@@ -1,50 +1,177 @@
 [
   {
     "id": "o1",
-    "category": "Research",
-    "title": "Summer Undergraduate Research Fellowship",
-    "eligibility": "2nd year and above, min 7.5 CGPA",
-    "deadline": "2026-10-02",
-    "description": "8-week paid research fellowship with a faculty mentor across any department."
+    "category": "Scholarship",
+    "title": "Merit-cum-Means Scholarship",
+    "eligibility": "Year 1",
+    "deadline": "2026-09-25",
+    "description": "Applications open for first-years. Documents go to the Scholarship Office by 25 September.",
+    "whyHere": "Posted 28 days ago in Official Notices Group - a channel nobody scrolls back through.",
+    "confidence": "stated",
+    "uncertainty": null,
+    "deadlineText": "by 25th September 2026",
+    "sources": [
+      {
+        "id": "msg_040",
+        "channel": "Official Notices Group",
+        "sender": "Scholarship Office",
+        "sentAt": "2026-08-18T14:00",
+        "excerpt": "applications for the Merit-cum-Means Scholarship are now open ... by 25th September 2026"
+      }
+    ],
+    "sourceCount": 1
   },
   {
     "id": "o2",
-    "category": "Internships",
-    "title": "Campus Ambassador — FinTech Startup",
-    "eligibility": "All years, all branches",
-    "deadline": "2026-09-25",
-    "description": "Remote internship, flexible hours, certificate and stipend on completion of milestones."
+    "category": "Cultural",
+    "title": "Tarang fest auditions",
+    "eligibility": "Open to all years and branches",
+    "deadline": "2026-09-20",
+    "description": "Auditions for Dance, Music, Drama, Fine Arts and Literary, 20-23 September in the Main Auditorium.",
+    "whyHere": "The answer existed two days before anyone started looking for it - in a channel they were not reading.",
+    "confidence": "stated",
+    "uncertainty": "Category-wise timings are only on the Auditorium notice board, not in the message.",
+    "deadlineText": "from 20th-23rd September 2026",
+    "sources": [
+      {
+        "id": "msg_041",
+        "channel": "Official Notices Group",
+        "sender": "Cultural Committee, Tarang Fest",
+        "sentAt": "2026-08-25T14:00",
+        "excerpt": "Auditions for various societies ... 20th-23rd September 2026 in the Main Auditorium"
+      },
+      {
+        "id": "msg_039",
+        "channel": "General Freshers/Batch Group",
+        "sender": "Multiple Students",
+        "sentAt": "2026-08-27T14:00",
+        "excerpt": "Tarang ke auditions ke baare mein kisi ko kuch pata hai? koi exact date nahi mili abhi tak"
+      }
+    ],
+    "sourceCount": 2
   },
   {
     "id": "o3",
-    "category": "Hackathons",
-    "title": "Inter-College Climate Tech Hackathon",
-    "eligibility": "Teams of 2-4, any year",
-    "deadline": "2026-09-30",
-    "description": "36-hour hackathon on campus, sponsored prizes and mentor office hours."
+    "category": "Academic",
+    "title": "University-Wide Hackathon registration",
+    "eligibility": "Open to all years and branches",
+    "deadline": "2026-09-22",
+    "description": "Teams of 4 to 6 must register on the college portal by 22 September. Event is 28-29 September.",
+    "whyHere": "Posted once in Official Notices Group, thirteen days ago.",
+    "confidence": "stated",
+    "uncertainty": null,
+    "deadlineText": "by 22nd September 2026",
+    "sources": [
+      {
+        "id": "msg_042",
+        "channel": "Official Notices Group",
+        "sender": "SIH/Hackathon Faculty Coordinator",
+        "sentAt": "2026-09-02T14:00",
+        "excerpt": "University-Wide Hackathon ... 28th-29th September 2026. Team registration ... by 22nd September 2026"
+      }
+    ],
+    "sourceCount": 1
   },
   {
     "id": "o4",
-    "category": "Grants",
-    "title": "Student Innovation Micro-Grant",
-    "eligibility": "Any year with a working prototype",
-    "deadline": "2026-10-10",
-    "description": "Up to ₹25,000 in seed funding for student-led projects and prototypes."
+    "category": "Academic",
+    "title": "Library Book Bank scheme",
+    "eligibility": "Open to all years and branches",
+    "deadline": "2026-09-24",
+    "description": "Free textbook lending for the semester. Form and a photo to the Library Counter by 24 September.",
+    "whyHere": "Free textbooks, announced once, in a notices group.",
+    "confidence": "stated",
+    "uncertainty": null,
+    "deadlineText": "by 24th September 2026",
+    "sources": [
+      {
+        "id": "msg_044",
+        "channel": "Official Notices Group",
+        "sender": "Central Library",
+        "sentAt": "2026-09-09T14:00",
+        "excerpt": "Book Bank Scheme (free textbook lending for the semester) ... by 24th September 2026"
+      }
+    ],
+    "sourceCount": 1
   },
   {
     "id": "o5",
-    "category": "Cultural Events",
-    "title": "Open Mic Night — Music Society",
+    "category": "Cultural",
+    "title": "Neutron game dev orientation",
     "eligibility": "Open to all years and branches",
-    "deadline": "2026-09-19",
-    "description": "Sign up to perform or just watch — amphitheatre, 7pm onward."
+    "deadline": "2026-09-22",
+    "description": "Game Development Club orientation with an industry speaker, 22 September, 12-3 PM.",
+    "whyHere": "Announced twice in two different society groups, in completely different words.",
+    "confidence": "stated",
+    "uncertainty": null,
+    "deadlineText": "22nd September, 12 PM - 3 PM",
+    "sources": [
+      {
+        "id": "msg_032",
+        "channel": "Neutron Gaming Society",
+        "sender": "Society Account",
+        "sentAt": "2026-09-08T13:03",
+        "excerpt": "NEUTRON - Game Development Club, IGDTUW is here with it's ORIENTATION! 22 September, 12 PM onwards"
+      },
+      {
+        "id": "msg_031",
+        "channel": "Neutron Official Club Group",
+        "sender": "Society Account",
+        "sentAt": "2026-09-09T13:03",
+        "excerpt": "NEUTRON ORIENTATION - Game Development Club. DATE: 22nd September. TIME: 12 PM - 3 PM. VENUE: Seminar Hall"
+      }
+    ],
+    "sourceCount": 2
   },
   {
     "id": "o6",
-    "category": "Internships",
-    "title": "Winter Data Analytics Internship",
-    "eligibility": "3rd/4th year, CSE/ECE preferred",
-    "deadline": "2026-11-01",
-    "description": "6-week onsite internship with a local analytics firm, stipend provided."
+    "category": "Scholarship",
+    "title": "thingQbator Innovation Mela",
+    "eligibility": "Open to all years and branches",
+    "deadline": "2026-09-28",
+    "description": "Two-day idea competition on campus. Rs 10,000 for the winning team.",
+    "whyHere": "Shared once in an unofficial help group.",
+    "confidence": "stated",
+    "uncertainty": "No separate registration cut-off is given; registration appears to be on the day.",
+    "deadlineText": "Day 1 (28 Sep) - Registration & Mentorship",
+    "sources": [
+      {
+        "id": "msg_002",
+        "channel": "Fresher Help Group (Unofficial)",
+        "sender": "Senior (Group Admin)",
+        "sentAt": "2026-09-11T12:00",
+        "excerpt": "thingQbator Innovation Mela 2026, 28th-29th September. Prizes for Top 3 Teams"
+      }
+    ],
+    "sourceCount": 1
+  },
+  {
+    "id": "o7",
+    "category": "Academic",
+    "title": "Student ID card collection",
+    "eligibility": "Year 1",
+    "deadline": null,
+    "description": "If you have not collected your ID card, the Admin Office issues them 9 AM to 1 PM, weekdays.",
+    "whyHere": "Needed for exam-hall entry, and there is no deadline attached to make it feel urgent.",
+    "confidence": "missing",
+    "uncertainty": "No closing date is given - just office hours.",
+    "deadlineText": null,
+    "sources": [
+      {
+        "id": "msg_043",
+        "channel": "Official Notices Group",
+        "sender": "Admin Office",
+        "sentAt": "2026-09-04T14:00",
+        "excerpt": "first-year students who have not yet collected their college ID cards ... 9 AM - 1 PM, Monday to Friday"
+      },
+      {
+        "id": "msg_049",
+        "channel": "Class Updates (Official Group)",
+        "sender": "CR (Class Representative)",
+        "sentAt": "2026-09-11T13:04",
+        "excerpt": "[Forwarded] ID Card Application Form - Everyone please fill this form for id card"
+      }
+    ],
+    "sourceCount": 2
   }
 ]
