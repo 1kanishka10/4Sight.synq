@@ -1,47 +1,139 @@
-[
+
+  [
   {
     "id": "s1",
-    "name": "Tech Society",
+    "name": "IGDTUW–ASME",
     "category": "Tech",
-    "description": "Runs the annual hackathon, weekly build nights, and a mentorship program pairing seniors with first-years.",
-    "core": ["Aarav Mehta — President", "Ishita Rao — Vice President", "Kabir Sen — Events Lead"],
-    "pastEvents": ["Climate Tech Hackathon 2025", "Intro to Git workshop series"],
-    "upcomingEvents": ["Round 1 hackathon registration closes Sept 20", "Build night — every Thursday, 6pm"]
+    "description": "Active in 1 channel. 2 open items in the current feed.",
+    "core": [
+      "Society Account"
+    ],
+    "pastEvents": [],
+    "upcomingEvents": [
+      "IIT Bombay robotics workshop — Register by 15 September",
+      "IIT Bombay robotics workshop — Register by 15 September"
+    ],
+    "channels": [
+      "ASME Society Group"
+    ]
   },
   {
     "id": "s2",
-    "name": "Dramatics Club",
-    "category": "Drama",
-    "description": "Stages two full productions a year and runs improv workshops open to all skill levels.",
-    "core": ["Meera Iyer — President", "Rohan Das — Script Lead"],
-    "pastEvents": ["Spring production: 'The Glass Menagerie'"],
-    "upcomingEvents": ["Improv workshop — Sept 22, Black Box theatre"]
+    "name": "GDG IGDTUW",
+    "category": "Tech",
+    "description": "Active in 1 channel. 2 open items in the current feed.",
+    "core": [
+      "Society Account"
+    ],
+    "pastEvents": [],
+    "upcomingEvents": [
+      "IIT Bombay robotics workshop — Register by 15 September",
+      "GDG IGDTUW recruitment — Deadline : 17th September 2026, 11:59 PM"
+    ],
+    "channels": [
+      "GDG IGDTUW Society Group"
+    ]
   },
   {
     "id": "s3",
-    "name": "Sports Committee",
-    "category": "Sports",
-    "description": "Organizes intramural leagues across cricket, football, and badminton, plus fitness challenges each semester.",
-    "core": ["Vikram Nair — Captain", "Sana Sheikh — Logistics"],
-    "pastEvents": ["Inter-branch football league"],
-    "upcomingEvents": ["Badminton trials — Sept 24, indoor court"]
+    "name": "Official Notices",
+    "category": "Administration",
+    "description": "Active in 1 channel. 5 open items in the current feed.",
+    "core": [
+      "Admin Office",
+      "SIH/Hackathon Faculty Coordinator",
+      "Cultural Committee, Tarang Fest",
+      "Scholarship Office",
+      "Central Library"
+    ],
+    "pastEvents": [],
+    "upcomingEvents": [
+      "Merit-cum-Means Scholarship — by 25th September 2026",
+      "Tarang fest auditions — from 20th-23rd September 2026",
+      "University-Wide Hackathon registration — by 22nd September 2026",
+      "Library Book Bank scheme — by 24th September 2026",
+      "Student ID card collection — no date given"
+    ],
+    "channels": [
+      "Official Notices Group"
+    ]
   },
   {
     "id": "s4",
-    "name": "Entrepreneurship Cell",
-    "category": "Entrepreneurship",
-    "description": "Hosts pitch nights and connects student founders with alumni mentors and the campus micro-grant program.",
-    "core": ["Aditi Bhatt — President", "Yusuf Khan — Partnerships"],
-    "pastEvents": ["Founders' pitch night, Spring 2026"],
-    "upcomingEvents": ["Micro-grant applications open — Sept 25"]
+    "name": "Neutron — Game Dev Club",
+    "category": "Tech",
+    "description": "Active in 2 channels. 2 open items in the current feed.",
+    "core": [
+      "Society Account"
+    ],
+    "pastEvents": [],
+    "upcomingEvents": [
+      "Neutron game dev orientation — 22nd September, 12 PM - 3 PM",
+      "Neutron game dev orientation — 22nd September, 12 PM - 3 PM"
+    ],
+    "channels": [
+      "Neutron Gaming Society",
+      "Neutron Official Club Group"
+    ]
   },
   {
     "id": "s5",
-    "name": "Music Society",
+    "name": "Team Synergy",
     "category": "Cultural",
-    "description": "Weekly jam sessions and the open-mic series, open to every year and branch.",
-    "core": ["Naina Kapoor — President", "Dev Malhotra — Sound Lead"],
-    "pastEvents": ["Acoustic Nights vol. 3"],
-    "upcomingEvents": ["Open mic night — Sept 19, amphitheatre"]
+    "description": "Active in 1 channel. 0 open items in the current feed.",
+    "core": [
+      "Society Account"
+    ],
+    "pastEvents": [
+      "Team Synergy recruitment — Deadline: 10 SEPTEMBER 2026"
+    ],
+    "upcomingEvents": [],
+    "channels": [
+      "Freshers Party Group"
+    ]
+  },
+  {
+    "id": "s6",
+    "name": "MSc Society",
+    "category": "Academic",
+    "description": "Active in 1 channel. 0 open items in the current feed.",
+    "core": [],
+    "pastEvents": [
+      "MSc Society interviews — today's interviews have been postponed. New date will be shared soon"
+    ],
+    "upcomingEvents": [],
+    "channels": [
+      "Interview/Society Applicants Group"
+    ]
+  },
+  {
+    "id": "s7",
+    "name": "Technique Society",
+    "category": "Tech",
+    "description": "Active in 1 channel. 0 open items in the current feed.",
+    "core": [],
+    "pastEvents": [
+      "Technique Society interview — New date: Friday, 11:00 AM, same venue"
+    ],
+    "upcomingEvents": [],
+    "channels": [
+      "Techneeds Club Unofficial Group"
+    ]
+  },
+  {
+    "id": "s8",
+    "name": "Minerva",
+    "category": "Literary",
+    "description": "Active in 1 channel. 0 open items in the current feed.",
+    "core": [
+      "Outreach Core"
+    ],
+    "pastEvents": [
+      "Minerva orientation — it will happen at 1.20pm!!"
+    ],
+    "upcomingEvents": [],
+    "channels": [
+      "Minerva Official Club Group"
+    ]
   }
 ]
