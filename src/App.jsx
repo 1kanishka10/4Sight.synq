@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { GraduationCap, Bell } from "lucide-react";
 import { Sidebar, MobileNav } from "./components/Sidebar";
+import { SynqMark } from "./components/SynqMark";
 import { DeadlinesSection } from "./sections/DeadlinesSection";
 import { OpportunitiesSection } from "./sections/OpportunitiesSection";
 import { ScheduleSection } from "./sections/ScheduleSection";
@@ -26,7 +27,7 @@ export default function App() {
         <header className="glass sticky top-0 z-30 flex items-center justify-between border-b border-white/60 px-5 py-4 lg:px-8">
           <div className="flex items-center gap-2 lg:hidden">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-ocean text-white">
-              <GraduationCap size={16} />
+                           <SynqMark size={18} />
             </div>
                         <span className="font-display text-base font-bold text-ink">Synq</span>
           </div>
