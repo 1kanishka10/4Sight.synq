@@ -17,7 +17,7 @@ export function Sidebar({ active, onChange }) {
         <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-ocean text-white">
           <GraduationCap size={18} />
         </div>
-        <span className="font-display text-lg font-bold">Campus Hub</span>
+                <span className="font-display text-lg font-bold">Synq</span>
       </div>
       <nav className="flex-1 px-3 py-2">
         {NAV.map(({ key, label, icon: Icon }) => {
