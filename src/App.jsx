@@ -28,7 +28,7 @@ export default function App() {
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-ocean text-white">
               <GraduationCap size={16} />
             </div>
-            <span className="font-display text-base font-bold text-ink">Campus Hub</span>
+                        <span className="font-display text-base font-bold text-ink">Synq</span>
           </div>
           <span className="hidden text-sm font-medium text-slate lg:block">{SECTION_LABEL[tab]}</span>
           <button className="relative rounded-full p-2 text-slate hover:bg-white" aria-label="Notifications">
