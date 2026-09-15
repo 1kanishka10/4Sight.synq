@@ -1,0 +1,56 @@
+[
+  {
+    "id": "n1",
+    "title": "CSE lab slot reshuffle for Batch 2029",
+    "department": "CSE",
+    "year": "2nd Year",
+    "type": "Academic",
+    "date": "2026-09-14",
+    "summary": "Wednesday lab batch swapped with Friday batch for the rest of the semester."
+  },
+  {
+    "id": "n2",
+    "title": "ECE signals lab — makeup session",
+    "department": "ECE",
+    "year": "3rd Year",
+    "type": "Academic",
+    "date": "2026-09-13",
+    "summary": "Makeup session for students who missed the Sept 10 practical, Saturday 10am."
+  },
+  {
+    "id": "n3",
+    "title": "Mechanical workshop safety briefing — mandatory",
+    "department": "ME",
+    "year": "1st Year",
+    "type": "Notice",
+    "date": "2026-09-15",
+    "summary": "All first-years must attend before workshop access is granted."
+  },
+  {
+    "id": "n4",
+    "title": "Biotech guest lecture: CRISPR applications",
+    "department": "Biotech",
+    "year": "All Years",
+    "type": "Event",
+    "date": "2026-09-18",
+    "summary": "Open lecture by a visiting researcher, seminar hall 1, optional attendance."
+  },
+  {
+    "id": "n5",
+    "title": "CSE placement pre-registration opens",
+    "department": "CSE",
+    "year": "4th Year",
+    "type": "Placement",
+    "date": "2026-09-16",
+    "summary": "Final-years must pre-register on the placement portal before company visits begin."
+  },
+  {
+    "id": "n6",
+    "title": "ECE project proposal submission",
+    "department": "ECE",
+    "year": "4th Year",
+    "type": "Academic",
+    "date": "2026-09-20",
+    "summary": "Final-year capstone project proposals due to department coordinators."
+  }
+]

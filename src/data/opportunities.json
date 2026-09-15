@@ -1,0 +1,50 @@
+[
+  {
+    "id": "o1",
+    "category": "Research",
+    "title": "Summer Undergraduate Research Fellowship",
+    "eligibility": "2nd year and above, min 7.5 CGPA",
+    "deadline": "2026-10-02",
+    "description": "8-week paid research fellowship with a faculty mentor across any department."
+  },
+  {
+    "id": "o2",
+    "category": "Internships",
+    "title": "Campus Ambassador — FinTech Startup",
+    "eligibility": "All years, all branches",
+    "deadline": "2026-09-25",
+    "description": "Remote internship, flexible hours, certificate and stipend on completion of milestones."
+  },
+  {
+    "id": "o3",
+    "category": "Hackathons",
+    "title": "Inter-College Climate Tech Hackathon",
+    "eligibility": "Teams of 2-4, any year",
+    "deadline": "2026-09-30",
+    "description": "36-hour hackathon on campus, sponsored prizes and mentor office hours."
+  },
+  {
+    "id": "o4",
+    "category": "Grants",
+    "title": "Student Innovation Micro-Grant",
+    "eligibility": "Any year with a working prototype",
+    "deadline": "2026-10-10",
+    "description": "Up to ₹25,000 in seed funding for student-led projects and prototypes."
+  },
+  {
+    "id": "o5",
+    "category": "Cultural Events",
+    "title": "Open Mic Night — Music Society",
+    "eligibility": "Open to all years and branches",
+    "deadline": "2026-09-19",
+    "description": "Sign up to perform or just watch — amphitheatre, 7pm onward."
+  },
+  {
+    "id": "o6",
+    "category": "Internships",
+    "title": "Winter Data Analytics Internship",
+    "eligibility": "3rd/4th year, CSE/ECE preferred",
+    "deadline": "2026-11-01",
+    "description": "6-week onsite internship with a local analytics firm, stipend provided."
+  }
+]

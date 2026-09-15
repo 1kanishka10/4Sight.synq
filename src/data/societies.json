@@ -1,0 +1,47 @@
+[
+  {
+    "id": "s1",
+    "name": "Tech Society",
+    "category": "Tech",
+    "description": "Runs the annual hackathon, weekly build nights, and a mentorship program pairing seniors with first-years.",
+    "core": ["Aarav Mehta — President", "Ishita Rao — Vice President", "Kabir Sen — Events Lead"],
+    "pastEvents": ["Climate Tech Hackathon 2025", "Intro to Git workshop series"],
+    "upcomingEvents": ["Round 1 hackathon registration closes Sept 20", "Build night — every Thursday, 6pm"]
+  },
+  {
+    "id": "s2",
+    "name": "Dramatics Club",
+    "category": "Drama",
+    "description": "Stages two full productions a year and runs improv workshops open to all skill levels.",
+    "core": ["Meera Iyer — President", "Rohan Das — Script Lead"],
+    "pastEvents": ["Spring production: 'The Glass Menagerie'"],
+    "upcomingEvents": ["Improv workshop — Sept 22, Black Box theatre"]
+  },
+  {
+    "id": "s3",
+    "name": "Sports Committee",
+    "category": "Sports",
+    "description": "Organizes intramural leagues across cricket, football, and badminton, plus fitness challenges each semester.",
+    "core": ["Vikram Nair — Captain", "Sana Sheikh — Logistics"],
+    "pastEvents": ["Inter-branch football league"],
+    "upcomingEvents": ["Badminton trials — Sept 24, indoor court"]
+  },
+  {
+    "id": "s4",
+    "name": "Entrepreneurship Cell",
+    "category": "Entrepreneurship",
+    "description": "Hosts pitch nights and connects student founders with alumni mentors and the campus micro-grant program.",
+    "core": ["Aditi Bhatt — President", "Yusuf Khan — Partnerships"],
+    "pastEvents": ["Founders' pitch night, Spring 2026"],
+    "upcomingEvents": ["Micro-grant applications open — Sept 25"]
+  },
+  {
+    "id": "s5",
+    "name": "Music Society",
+    "category": "Cultural",
+    "description": "Weekly jam sessions and the open-mic series, open to every year and branch.",
+    "core": ["Naina Kapoor — President", "Dev Malhotra — Sound Lead"],
+    "pastEvents": ["Acoustic Nights vol. 3"],
+    "upcomingEvents": ["Open mic night — Sept 19, amphitheatre"]
+  }
+]

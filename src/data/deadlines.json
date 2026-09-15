@@ -1,0 +1,72 @@
+[
+  {
+    "id": "d1",
+    "title": "Submit patent disclosure form",
+    "tag": "Research Office",
+    "dueInHours": 9,
+    "description": "Faculty-guided research groups must file the IP disclosure form before the filing window closes for this cycle.",
+    "actionLink": "https://portal.example.edu/research/disclosure",
+    "contact": "Dr. Rina Kapoor, research.office@college.edu",
+    "submission": "Upload signed PDF on the research portal, no physical copy needed."
+  },
+  {
+    "id": "d2",
+    "title": "Pay semester hostel dues",
+    "tag": "Hostel Office",
+    "dueInHours": 20,
+    "description": "Second installment for hostel and mess fees. Late payment blocks mess card renewal.",
+    "actionLink": "https://portal.example.edu/hostel/pay",
+    "contact": "Hostel Accounts Desk, Block C",
+    "submission": "Pay online via the hostel portal or at the accounts desk, 10am–4pm."
+  },
+  {
+    "id": "d3",
+    "title": "Round 1 hackathon team registration",
+    "tag": "Tech Society",
+    "dueInHours": 40,
+    "description": "Teams of up to 4 must register before slots close. First-year students are eligible for the beginner track.",
+    "actionLink": "https://portal.example.edu/hackathon/register",
+    "contact": "hackteam@techsociety.college.edu",
+    "submission": "Fill the Google Form with team name, members, and track preference."
+  },
+  {
+    "id": "d4",
+    "title": "DBT scholarship bank re-verification",
+    "tag": "Scholarship Cell",
+    "dueInHours": 60,
+    "description": "Students whose last transfer failed must resubmit passbook proof or lose this term's disbursement.",
+    "actionLink": "https://portal.example.edu/scholarship/dbt",
+    "contact": "scholarships@college.edu",
+    "submission": "Upload a clear photo of your passbook's first page."
+  },
+  {
+    "id": "d5",
+    "title": "Elective preference form",
+    "tag": "Academic Office",
+    "dueInHours": 95,
+    "description": "Rank your top 3 electives. Unranked students are auto-assigned remaining slots.",
+    "actionLink": "https://portal.example.edu/academics/electives",
+    "contact": "academics@college.edu",
+    "submission": "Rank choices on the academic portal, editable until deadline."
+  },
+  {
+    "id": "d6",
+    "title": "Annual fest volunteer sign-up",
+    "tag": "Student Council",
+    "dueInHours": 150,
+    "description": "Volunteer slots for the cultural fest across hospitality, logistics, and stage management.",
+    "actionLink": "https://portal.example.edu/fest/volunteer",
+    "contact": "fest.volunteers@college.edu",
+    "submission": "Sign up via the linked form, choose one team."
+  },
+  {
+    "id": "d7",
+    "title": "Society elections — voting closes",
+    "tag": "Student Council",
+    "dueInHours": 23,
+    "description": "Voting for the student council representative closes the same evening as the hostel fee deadline.",
+    "actionLink": "https://portal.example.edu/elections/vote",
+    "contact": "elections@college.edu",
+    "submission": "Cast your vote via the linked Google Form, one submission per student."
+  }
+]
