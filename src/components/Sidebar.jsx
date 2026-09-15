@@ -37,7 +37,7 @@ export function Sidebar({ active, onChange }) {
           );
         })}
       </nav>
-      <div className="px-6 py-5 text-xs text-white/40">v0.1 · mock data</div>
+      <div className="px-6 py-5 text-xs text-white/40">v0.1 · 50 messages processed. </div>
     </aside>
   );
 }
