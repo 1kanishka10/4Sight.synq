@@ -1,6 +1,7 @@
 import React from "react";
 import { AlarmClock, Compass, CalendarClock, Users, Search, GraduationCap } from "lucide-react";
 import clsx from "clsx";
+import { SynqMark } from "./SynqMark";
 
 const NAV = [
   { key: "deadlines", label: "Urgent Deadlines", icon: AlarmClock },
@@ -15,7 +16,7 @@ export function Sidebar({ active, onChange }) {
     <aside className="hidden lg:flex lg:w-64 lg:flex-col lg:shrink-0 glass-dark text-white">
       <div className="flex items-center gap-2 px-6 py-6">
         <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-ocean text-white">
-          <GraduationCap size={18} />
+                    <SynqMark size={20} />
         </div>
                 <span className="font-display text-lg font-bold">Synq</span>
       </div>
