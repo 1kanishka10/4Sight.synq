@@ -135,5 +135,75 @@
     "channels": [
       "Minerva Official Club Group"
     ]
+    },
+  {
+    "id": "s9",
+    "name": "B.H.A.V.",
+    "category": "Cultural",
+    "description": "Announced an orientation in the Auditorium. Date and time were explicitly left as TO BE ANNOUNCED.",
+    "core": ["Society Account"],
+    "pastEvents": [],
+    "upcomingEvents": ["Orientation — date and time to be announced"],
+    "channels": ["BHAV Society Group"]
+  },
+  {
+    "id": "s10",
+    "name": "Zena Fashion Club",
+    "category": "Cultural",
+    "description": "Orientation announced, but the date was only posted on Instagram and the venue was never given.",
+    "core": ["Society Account"],
+    "pastEvents": [],
+    "upcomingEvents": ["Orientation — date on Instagram only, venue not announced"],
+    "channels": ["Zena Fashion Club Group"]
+  },
+  {
+    "id": "s11",
+    "name": "FINIVESTA",
+    "category": "Academic",
+    "description": "Recruitment ran and closed on 13 September. Announced as a final call on the closing day itself.",
+    "core": ["Society Account"],
+    "pastEvents": ["Applications closed — 13 September"],
+    "upcomingEvents": [],
+    "channels": ["Class Group (CS-AI)"]
+  },
+  {
+    "id": "s12",
+    "name": "LEAN IN",
+    "category": "Community",
+    "description": "Community invitation for the 2030 batch. Mentions an orientation, recruitment and a hackathon, with no date for any of them.",
+    "core": ["Senior (Group Admin)"],
+    "pastEvents": [],
+    "upcomingEvents": ["Orientation, recruitment and a hackathon — no dates given"],
+    "channels": ["Unofficial WhatsApp Broadcast"]
+  },
+  {
+    "id": "s13",
+    "name": "Pandora Society",
+    "category": "Cultural",
+    "description": "Ran a poll on which month to hold a trip. No date and nothing to act on yet.",
+    "core": ["Society Account"],
+    "pastEvents": [],
+    "upcomingEvents": ["Trip — month being polled"],
+    "channels": ["Pandora Society Group"]
+  },
+  {
+    "id": "s14",
+    "name": "Dance Society",
+    "category": "Cultural",
+    "description": "Held auditions that clashed with a Coding Club orientation at 4 PM. Reported by students; neither coordinator was told.",
+    "core": [],
+    "pastEvents": ["Auditions — clashed with Coding Club orientation, date has passed"],
+    "upcomingEvents": [],
+    "channels": ["Cse Ai Unofficial Group"]
+  },
+  {
+    "id": "s15",
+    "name": "Coding Club",
+    "category": "Tech",
+    "description": "Held an orientation that clashed with Dance Society auditions at 4 PM. Reported by students; neither coordinator was told.",
+    "core": [],
+    "pastEvents": ["Orientation — clashed with Dance Society auditions, date has passed"],
+    "upcomingEvents": [],
+    "channels": ["Cse Ai Unofficial Group"]
   }
 ]
