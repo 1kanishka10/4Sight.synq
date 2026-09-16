@@ -3,14 +3,15 @@ import { Bell } from "lucide-react";
 import { Sidebar, MobileNav } from "./components/Sidebar";
 import { ImportButton } from "./components/ImportButton";
 import { SynqMark } from "./components/SynqMark";
+import { DashboardSection } from "./sections/DashboardSection";
 import { DeadlinesSection } from "./sections/DeadlinesSection";
 import { OpportunitiesSection } from "./sections/OpportunitiesSection";
 import { ScheduleSection } from "./sections/ScheduleSection";
 import { SocietiesSection } from "./sections/SocietiesSection";
 import { SearchSection } from "./sections/SearchSection";
-import { DashboardSection } from "./sections/DashboardSection";
 
 const SECTION_LABEL = {
+  dashboard: "Dashboard",
   deadlines: "Urgent Deadlines",
   opportunities: "Campus Opportunities",
   schedule: "Schedule & Clashes",
@@ -19,7 +20,7 @@ const SECTION_LABEL = {
 };
 
 export default function App() {
-  const [tab, setTab] = useState("deadlines");
+  const [tab, setTab] = useState("dashboard");
 
   return (
     <div className="flex min-h-screen bg-canvas">
@@ -51,6 +52,7 @@ export default function App() {
         </header>
 
         <main className="flex-1 px-5 pb-24 pt-6 lg:px-8 lg:pb-10">
+          {tab === "dashboard" && <DashboardSection onNavigate={setTab} />}
           {tab === "deadlines" && <DeadlinesSection />}
           {tab === "opportunities" && <OpportunitiesSection />}
           {tab === "schedule" && <ScheduleSection />}
@@ -59,7 +61,4 @@ export default function App() {
         </main>
       </div>
 
-      <MobileNav active={tab} onChange={setTab} />
-    </div>
-  );
-}
+      <MobileNav active={tab}
