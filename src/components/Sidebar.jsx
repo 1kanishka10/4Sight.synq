@@ -1,9 +1,10 @@
 import React from "react";
-import { AlarmClock, Compass, CalendarClock, Users, Search, GraduationCap } from "lucide-react";
+import { LayoutDashboard, AlarmClock, Compass, CalendarClock, Users, Search } from "lucide-react";
 import clsx from "clsx";
 import { SynqMark } from "./SynqMark";
 
 const NAV = [
+  { key: "dashboard", label: "Dashboard", icon: LayoutDashboard },
   { key: "deadlines", label: "Urgent Deadlines", icon: AlarmClock },
   { key: "opportunities", label: "Opportunities", icon: Compass },
   { key: "schedule", label: "Schedule & Clashes", icon: CalendarClock },
