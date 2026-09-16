@@ -4,6 +4,7 @@ import { ImportButton } from "./components/ImportButton";
 import { SynqMark } from "./components/SynqMark";
 import { GlobalSearch } from "./components/GlobalSearch";
 import { NotificationBell } from "./components/NotificationBell";
+import { ThemeToggle } from "./components/ThemeToggle";
 import { DashboardSection } from "./sections/DashboardSection";
 import { DeadlinesSection } from "./sections/DeadlinesSection";
 import { OpportunitiesSection } from "./sections/OpportunitiesSection";
@@ -70,6 +71,7 @@ export default function App() {
 
           <div className="flex items-center gap-2">
             <ImportButton />
+             <ThemeToggle />
             <NotificationBell onNavigate={goTo} />
           </div>
         </header>
