@@ -26,7 +26,8 @@ deadlines.forEach((d) => {
   if (d.dueInHours == null) return;
   const date = new Date(SNAPSHOT.getTime() + d.dueInHours * 3600 * 1000);
   EVENTS.push({
-    id: `d-${d.id}`,
+        id: `d-${d.id}`,
+    rawId: d.id,
     date,
     kind: "Deadline",
     tone: "critical",
@@ -42,7 +43,8 @@ opportunities.forEach((o) => {
   const date = fromISO(o.deadline);
   if (!date) return;
   EVENTS.push({
-    id: `o-${o.id}`,
+        id: `o-${o.id}`,
+    rawId: o.id,
     date,
     kind: o.category === "Cultural" ? "Event" : "Opportunity",
     tone: o.category === "Cultural" ? "medium" : "ocean",
@@ -250,7 +252,7 @@ export function CalendarSection({ onNavigate }) {
                     </p>
                   )}
                   <button
-                    onClick={() => onNavigate?.(e.tab)}
+                                       onClick={() => onNavigate?.(e.tab, e.rawId)}
                     className="mt-2.5 w-full rounded-full bg-ocean px-3 py-1.5 text-xs font-semibold text-white"
                   >
                     Open in {e.tab === "deadlines" ? "Deadlines" : "Opportunities"}
