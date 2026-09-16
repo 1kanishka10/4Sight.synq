@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Sidebar, MobileNav } from "./components/Sidebar";
 import { ImportButton } from "./components/ImportButton";
 import { SynqMark } from "./components/SynqMark";
@@ -24,10 +24,38 @@ const SECTION_LABEL = {
 
 export default function App() {
   const [tab, setTab] = useState("dashboard");
+  const [focus, setFocus] = useState(null);
+
+  // Jump to a tab, optionally pointing at one item inside it.
+  function goTo(nextTab, itemId = null) {
+    setTab(nextTab);
+    setFocus(itemId ? { id: itemId, at: Date.now() } : null);
+  }
+
+  // After the new tab paints, scroll that card into view and ring it briefly.
+  useEffect(() => {
+    if (!focus) return;
+    let clear;
+    const find = setTimeout(() => {
+      const el = document.getElementById(`item-${focus.id}`);
+      if (!el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.style.outline = "2px solid #2F5FE0";
+      el.style.outlineOffset = "3px";
+      clear = setTimeout(() => {
+        el.style.outline = "";
+        el.style.outlineOffset = "";
+      }, 2600);
+    }, 60);
+    return () => {
+      clearTimeout(find);
+      clearTimeout(clear);
+    };
+  }, [focus]);
 
   return (
     <div className="flex min-h-screen bg-canvas">
-      <Sidebar active={tab} onChange={setTab} />
+      <Sidebar active={tab} onChange={goTo} />
 
       <div className="flex min-h-screen flex-1 flex-col">
         <header className="glass sticky top-0 z-30 flex items-center justify-between border-b border-white/60 px-5 py-4 lg:px-8">
@@ -38,26 +66,26 @@ export default function App() {
             <span className="font-display text-base font-bold text-ink">Synq</span>
           </div>
 
-          <GlobalSearch onNavigate={setTab} />
+          <GlobalSearch onNavigate={goTo} />
 
           <div className="flex items-center gap-2">
             <ImportButton />
-            <NotificationBell onNavigate={setTab} />
+            <NotificationBell onNavigate={goTo} />
           </div>
         </header>
 
         <main className="flex-1 px-5 pb-24 pt-6 lg:px-8 lg:pb-10">
-          {tab === "dashboard" && <DashboardSection onNavigate={setTab} />}
+          {tab === "dashboard" && <DashboardSection onNavigate={goTo} />}
           {tab === "deadlines" && <DeadlinesSection />}
           {tab === "opportunities" && <OpportunitiesSection />}
-          {tab === "calendar" && <CalendarSection onNavigate={setTab} />}
+          {tab === "calendar" && <CalendarSection onNavigate={goTo} />}
           {tab === "schedule" && <ScheduleSection />}
           {tab === "societies" && <SocietiesSection />}
           {tab === "search" && <SearchSection />}
         </main>
       </div>
 
-      <MobileNav active={tab} onChange={setTab} />
+      <MobileNav active={tab} onChange={goTo} />
     </div>
   );
 }
