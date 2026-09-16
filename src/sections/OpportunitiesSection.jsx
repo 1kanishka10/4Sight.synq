@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { Card, Badge, Drawer } from "../components/ui";
 import opportunities from "../data/opportunities.json";
-import { authorityOf, priorityOf } from "../lib/authority";
+import { authorityOf, priorityOf } from "../../lib/authority";
 const STORE_KEY = "synq.saved.opportunities";
 
 function loadSaved() {
