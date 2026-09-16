@@ -1,5 +1,4 @@
-# Campus Hub
-
+# Synq
 A centralized college announcement and opportunity hub, built as a 5-section
 dashboard with a dark glassmorphism sidebar and mock JSON data throughout.
 
