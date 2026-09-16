@@ -4,8 +4,8 @@ import clsx from "clsx";
 import { Card, Modal } from "../components/ui";
 import societies from "../data/societies.json";
 
-const CATEGORIES = ["All", "Tech", "Cultural", "Sports", "Drama", "Entrepreneurship"];
-
+// Built from the data, so every chip returns something.
+const CATEGORIES = ["All", ...[...new Set(societies.map((s) => s.category))].sort()];
 export function SocietiesSection() {
   const [category, setCategory] = useState("All");
   const [selected, setSelected] = useState(null);
