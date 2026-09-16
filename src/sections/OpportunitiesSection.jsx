@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { Card, Badge, Drawer } from "../components/ui";
 import opportunities from "../data/opportunities.json";
-
+import { authorityOf, priorityOf } from "../lib/authority";
 const STORE_KEY = "synq.saved.opportunities";
 
 function loadSaved() {
@@ -25,14 +25,16 @@ function loadSaved() {
   }
 }
 
-// Dated first, nearest deadline leading; undated at the end.
+// Who announced it, then how soon it closes. An Admin Office notice with no date
+// outranks a society post that is merely dated.
 const sorted = [...opportunities].sort((a, b) => {
+  const byPriority = priorityOf(b) - priorityOf(a);
+  if (byPriority !== 0) return byPriority;
   if (!a.deadline && !b.deadline) return 0;
   if (!a.deadline) return 1;
   if (!b.deadline) return -1;
   return new Date(a.deadline) - new Date(b.deadline);
 });
-
 function dueLabel(o) {
   if (!o.deadline) return o.deadlineText || "No deadline stated";
   const d = new Date(o.deadline);
@@ -128,7 +130,10 @@ export function OpportunitiesSection() {
                 className="group flex cursor-pointer flex-col gap-3 p-5 transition-transform hover:-translate-y-0.5"
               >
                 <div className="flex items-start justify-between gap-2">
-                  <Badge tone="ocean">{o.category}</Badge>
+                                   <span className="flex flex-wrap items-center gap-1.5">
+                    <Badge tone="ocean">{o.category}</Badge>
+                    {authorityOf(o).label && <Badge tone="medium">{authorityOf(o).label}</Badge>}
+                  </span>
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
