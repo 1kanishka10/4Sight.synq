@@ -68,11 +68,11 @@ export function ImportButton() {
 
       {open && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-canvas/80 p-4 backdrop-blur-sm"
+                  className="fixed inset-0 z-50 flex items-center justify-center bg-[#050B1E]/70 p-4 backdrop-blur-sm"
           onClick={close}
         >
           <div
-            className="glass max-h-[85vh] w-full max-w-lg overflow-y-auto rounded-xl2 border border-white/60 p-6 shadow-panel"
+                        className="bg-surface max-h-[85vh] w-full max-w-lg overflow-y-auto rounded-xl2 border border-white/60 p-6 shadow-lift"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="mb-5 flex items-start justify-between gap-4">
