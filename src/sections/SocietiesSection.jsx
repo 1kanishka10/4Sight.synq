@@ -59,7 +59,7 @@ export function SocietiesSection() {
             <p className="text-sm leading-relaxed text-ink/80">{selected.description}</p>
             <DetailList label="Core team" items={selected.core} />
             <DetailList label="Past events" items={selected.pastEvents} />
-            <DetailList label="Upcoming events" items={selected.upcomingEvents} />
+                        <DetailList label="Upcoming events" items={[...new Set(selected.upcomingEvents)]} />
           </div>
         )}
       </Modal>
