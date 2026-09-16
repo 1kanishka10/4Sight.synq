@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Bell } from "lucide-react";
 import { Sidebar, MobileNav } from "./components/Sidebar";
 import { ImportButton } from "./components/ImportButton";
 import { SynqMark } from "./components/SynqMark";
@@ -8,6 +7,7 @@ import { NotificationBell } from "./components/NotificationBell";
 import { DashboardSection } from "./sections/DashboardSection";
 import { DeadlinesSection } from "./sections/DeadlinesSection";
 import { OpportunitiesSection } from "./sections/OpportunitiesSection";
+import { CalendarSection } from "./sections/CalendarSection";
 import { ScheduleSection } from "./sections/ScheduleSection";
 import { SocietiesSection } from "./sections/SocietiesSection";
 import { SearchSection } from "./sections/SearchSection";
@@ -16,6 +16,7 @@ const SECTION_LABEL = {
   dashboard: "Dashboard",
   deadlines: "Urgent Deadlines",
   opportunities: "Campus Opportunities",
+  calendar: "Calendar",
   schedule: "Schedule & Clashes",
   societies: "Societies Directory",
   search: "Announcements",
@@ -36,11 +37,12 @@ export default function App() {
             </div>
             <span className="font-display text-base font-bold text-ink">Synq</span>
           </div>
-                    <GlobalSearch onNavigate={setTab} />
+
+          <GlobalSearch onNavigate={setTab} />
 
           <div className="flex items-center gap-2">
             <ImportButton />
-                        <NotificationBell onNavigate={setTab} />
+            <NotificationBell onNavigate={setTab} />
           </div>
         </header>
 
@@ -48,6 +50,7 @@ export default function App() {
           {tab === "dashboard" && <DashboardSection onNavigate={setTab} />}
           {tab === "deadlines" && <DeadlinesSection />}
           {tab === "opportunities" && <OpportunitiesSection />}
+          {tab === "calendar" && <CalendarSection onNavigate={setTab} />}
           {tab === "schedule" && <ScheduleSection />}
           {tab === "societies" && <SocietiesSection />}
           {tab === "search" && <SearchSection />}
