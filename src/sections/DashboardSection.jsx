@@ -202,8 +202,8 @@ export function DashboardSection({ onNavigate }) {
         <Card className="p-4">
           <div className="flex flex-col gap-2.5">
             {(stats.noiseExamples ?? []).map((n) => (
-              <div key={n.id} className="flex gap-3">
-                <span className="shrink-0 font-mono text-[11px] text-slate">{n.id}</span>
+                            <div key={n.id} className="flex gap-2.5">
+                <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-slate" />
                 <p className="text-xs leading-relaxed text-ink/70">{n.why}</p>
               </div>
             ))}
