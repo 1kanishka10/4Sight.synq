@@ -3,6 +3,7 @@ import { Bell } from "lucide-react";
 import { Sidebar, MobileNav } from "./components/Sidebar";
 import { ImportButton } from "./components/ImportButton";
 import { SynqMark } from "./components/SynqMark";
+import { GlobalSearch } from "./components/GlobalSearch";
 import { DashboardSection } from "./sections/DashboardSection";
 import { DeadlinesSection } from "./sections/DeadlinesSection";
 import { OpportunitiesSection } from "./sections/OpportunitiesSection";
@@ -34,10 +35,7 @@ export default function App() {
             </div>
             <span className="font-display text-base font-bold text-ink">Synq</span>
           </div>
-
-          <span className="hidden text-sm font-medium text-slate lg:block">
-            {SECTION_LABEL[tab]}
-          </span>
+                    <GlobalSearch onNavigate={setTab} />
 
           <div className="flex items-center gap-2">
             <ImportButton />
