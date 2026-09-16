@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Clock3, User, Link as LinkIcon, FileText, HelpCircle } from "lucide-react";
 import { Card, Badge, Drawer } from "../components/ui";
 import deadlines from "../data/deadlines.json";
+import { authorityOf } from "../lib/authority";
 
 function urgencyOf(hours) {
   if (hours == null) return { tone: "medium", label: "Not confirmed" };
@@ -50,7 +51,8 @@ export function DeadlinesSection() {
                 <div className="min-w-0">
                   <p className="mb-1 font-display text-[15px] font-bold text-ink">{d.title}</p>
                   <div className="flex flex-wrap items-center gap-1.5">
-                    <Badge tone="slate">{d.tag}</Badge>
+                                       <Badge tone="slate">{d.tag}</Badge>
+                    {authorityOf(d).label && <Badge tone="medium">{authorityOf(d).label}</Badge>}
                     {d.sourceCount > 1 && (
                       <Badge tone="slate">{d.sourceCount} sources</Badge>
                     )}
