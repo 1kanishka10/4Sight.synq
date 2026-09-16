@@ -1,6 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Bookmark, BookmarkCheck, Eye, Layers, CalendarDays } from "lucide-react";
-import { Card, Badge } from "../components/ui";
+import {
+  Bookmark,
+  BookmarkCheck,
+  Eye,
+  Layers,
+  CalendarDays,
+  Users,
+  HelpCircle,
+  MessageSquare,
+  Link as LinkIcon,
+  ChevronRight,
+} from "lucide-react";
+import { Card, Badge, Drawer } from "../components/ui";
 import opportunities from "../data/opportunities.json";
 
 const STORE_KEY = "synq.saved.opportunities";
@@ -29,9 +40,27 @@ function dueLabel(o) {
   return d.toLocaleDateString(undefined, { day: "numeric", month: "short" });
 }
 
+function when(iso) {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleString(undefined, {
+    day: "numeric",
+    month: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
+function href(link) {
+  if (!link) return null;
+  return /^https?:\/\//i.test(link) ? link : `https://${link}`;
+}
+
 export function OpportunitiesSection() {
   const [saved, setSaved] = useState(loadSaved);
   const [onlySaved, setOnlySaved] = useState(false);
+  const [open, setOpen] = useState(null);
 
   useEffect(() => {
     try {
@@ -57,8 +86,7 @@ export function OpportunitiesSection() {
         <div>
           <h1 className="font-display text-2xl font-bold text-ink">Campus Opportunities</h1>
           <p className="text-sm text-slate">
-            Things worth knowing about that were announced once and buried. Nothing here was
-            filtered out for being unexpected.
+            Announced once and buried. Open any card to see the messages it came from.
           </p>
         </div>
 
@@ -93,47 +121,57 @@ export function OpportunitiesSection() {
           {visible.map((o) => {
             const isSaved = saved.has(o.id);
             return (
-                           <Card key={o.id} id={`item-${o.id}`} className="flex flex-col gap-3 p-5">
+              <Card
+                key={o.id}
+                id={`item-${o.id}`}
+                onClick={() => setOpen(o)}
+                className="group flex cursor-pointer flex-col gap-3 p-5 transition-transform hover:-translate-y-0.5"
+              >
                 <div className="flex items-start justify-between gap-2">
                   <Badge tone="ocean">{o.category}</Badge>
                   <button
-                    onClick={() => toggle(o.id)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggle(o.id);
+                    }}
                     aria-label={isSaved ? "Remove from saved" : "Save for later"}
-                    title={isSaved ? "Remove from saved" : "Save for later"}
                     className={isSaved ? "text-ocean" : "text-slate hover:text-ocean"}
                   >
                     {isSaved ? <BookmarkCheck size={18} /> : <Bookmark size={18} />}
                   </button>
                 </div>
 
-                <h3 className="font-display text-[15px] font-bold text-ink">{o.title}</h3>
-                <p className="text-sm leading-relaxed text-ink/70">{o.description}</p>
+                <h3 className="font-display text-[15px] font-bold leading-snug text-ink">
+                  {o.title}
+                </h3>
+                <p className="line-clamp-2 text-sm leading-relaxed text-ink/70">
+                  {o.description}
+                </p>
 
                 {o.whyHere && (
-                  <div className="rounded-lg border border-sky/20 bg-sky/5 p-2.5">
-                    <p className="mb-1 flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-sky">
-                      <Eye size={11} />
-                      Why you're seeing this
-                    </p>
-                    <p className="text-xs leading-relaxed text-ink/75">{o.whyHere}</p>
-                  </div>
+                  <p className="line-clamp-1 flex items-center gap-1.5 text-xs italic text-sky">
+                    <Eye size={11} className="shrink-0" />
+                    {o.whyHere}
+                  </p>
                 )}
 
-                <div className="mt-auto flex flex-col gap-1.5 pt-2 text-xs text-slate">
+                <div className="mt-auto flex items-center justify-between gap-2 border-t border-slate/15 pt-3 text-xs text-slate">
                   <span className="flex items-center gap-1.5">
                     <CalendarDays size={12} />
                     {dueLabel(o)}
                   </span>
-                  <span>Eligibility: {o.eligibility}</span>
-                  <div className="flex flex-wrap items-center gap-2 pt-1">
+                  <span className="flex items-center gap-2">
                     {o.sourceCount > 1 && (
                       <span className="inline-flex items-center gap-1">
                         <Layers size={11} />
-                        {o.sourceCount} sources
+                        {o.sourceCount}
                       </span>
                     )}
-                    {o.confidence !== "stated" && <Badge tone="slate">Not confirmed</Badge>}
-                  </div>
+                    <ChevronRight
+                      size={14}
+                      className="transition-transform group-hover:translate-x-0.5"
+                    />
+                  </span>
                 </div>
               </Card>
             );
@@ -141,11 +179,115 @@ export function OpportunitiesSection() {
         </div>
       )}
 
-      {saved.size > 0 && !onlySaved && (
-        <p className="mt-5 text-xs text-slate">
-          {saved.size} saved. They stay saved on this device after you close the tab.
-        </p>
-      )}
+      <Drawer open={!!open} onClose={() => setOpen(null)} title={open?.title ?? ""}>
+        {open && (
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-wrap items-center gap-2">
+              <Badge tone="ocean">{open.category}</Badge>
+              {open.confidence !== "stated" && <Badge tone="slate">Not confirmed</Badge>}
+              {open.sourceCount > 1 && (
+                <Badge tone="slate">merged from {open.sourceCount} messages</Badge>
+              )}
+            </div>
+
+            <p className="text-sm leading-relaxed text-ink/80">{open.description}</p>
+
+            {open.whyHere && (
+              <div className="rounded-xl border border-sky/20 bg-sky/5 p-3.5">
+                <p className="mb-1.5 flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-sky">
+                  <Eye size={11} />
+                  Why you're seeing this
+                </p>
+                <p className="text-xs leading-relaxed text-ink/75">{open.whyHere}</p>
+              </div>
+            )}
+
+            <div className="grid grid-cols-2 gap-3">
+              <Fact icon={CalendarDays} label="Deadline" value={dueLabel(open)} />
+              <Fact icon={Users} label="Eligibility" value={open.eligibility} />
+            </div>
+
+            {open.deadlineText && (
+              <Fact
+                icon={MessageSquare}
+                label="As written in the message"
+                value={`"${open.deadlineText}"`}
+              />
+            )}
+
+            {open.uncertainty && (
+              <Fact
+                icon={HelpCircle}
+                label="What the message doesn't say"
+                value={open.uncertainty}
+              />
+            )}
+
+            {open.sources?.length > 0 && (
+              <div>
+                <p className="mb-2 flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-slate">
+                  <MessageSquare size={11} />
+                  Where this came from
+                </p>
+                <div className="flex flex-col gap-2">
+                  {open.sources.map((s) => (
+                    <div key={s.id} className="rounded-xl border border-slate/20 p-3">
+                      <p className="mb-1 text-[11px] text-slate">
+                        {s.channel} · {s.sender} · {when(s.sentAt)}
+                      </p>
+                      <p className="text-xs leading-relaxed text-ink/80">"{s.excerpt}"</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="flex flex-col gap-2 border-t border-slate/15 pt-4">
+              {href(open.actionLink) ? (
+                
+                  href={href(open.actionLink)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-ocean px-5 py-2.5 text-sm font-semibold text-white"
+                >
+                  <LinkIcon size={15} />
+                  Open the form
+                </a>
+              ) : (
+                <p className="text-xs italic leading-relaxed text-slate">
+                  No link was included in the original message. Details are in the quoted
+                  text above.
+                </p>
+              )}
+
+              <button
+                onClick={() => toggle(open.id)}
+                className={
+                  saved.has(open.id)
+                    ? "inline-flex items-center justify-center gap-2 rounded-full border border-ocean px-5 py-2.5 text-sm font-semibold text-ocean"
+                    : "inline-flex items-center justify-center gap-2 rounded-full border border-slate/30 px-5 py-2.5 text-sm font-semibold text-ink"
+                }
+              >
+                {saved.has(open.id) ? <BookmarkCheck size={15} /> : <Bookmark size={15} />}
+                {saved.has(open.id) ? "Saved" : "Save for later"}
+              </button>
+            </div>
+          </div>
+        )}
+      </Drawer>
     </section>
+  );
+}
+
+function Fact({ icon: Icon, label, value }) {
+  if (!value) return null;
+  return (
+    <div>
+      <p className="mb-1 flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-slate">
+        <Icon size={11} />
+        {label}
+      </p>
+      <p className="text-xs leading-relaxed text-ink/80">{value}</p>
+    </div>
   );
 }
