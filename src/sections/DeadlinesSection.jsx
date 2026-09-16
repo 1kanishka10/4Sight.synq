@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Clock3, User, Link as LinkIcon, FileText, HelpCircle } from "lucide-react";
 import { Card, Badge, Drawer } from "../components/ui";
 import deadlines from "../data/deadlines.json";
-import { authorityOf } from "../lib/authority";
+import { authorityOf } from "../../lib/authority";
 
 function urgencyOf(hours) {
   if (hours == null) return { tone: "medium", label: "Not confirmed" };
