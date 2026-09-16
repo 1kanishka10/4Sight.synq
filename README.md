@@ -3,7 +3,7 @@
 **Fifty messages in. Five things you actually have to do.**
 
 Synq reads a fresher's campus WhatsApp groups and returns what needs doing —
-ranked, deduplicated, and never invented.
+ranked, deduplicated, and never invented..
 
 Built for SheVibes Vibeathon 2026, Track 3 — *AI for Smarter Campus Information*.
 
