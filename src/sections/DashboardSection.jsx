@@ -34,7 +34,8 @@ function when(iso) {
 
 export function DashboardSection({ onNavigate }) {
   const ranked = [...deadlines].sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99));
-  const [pickedId, setPickedId] = useState(ranked[0]?.id);
+    const [pickedId, setPickedId] = useState(ranked[0]?.id);
+  const [showAllNoise, setShowAllNoise] = useState(false);
   const picked = ranked.find((d) => d.id === pickedId) ?? ranked[0];
 
   return (
@@ -200,14 +201,34 @@ export function DashboardSection({ onNavigate }) {
           </h2>
         </div>
         <Card className="p-4">
-          <div className="flex flex-col gap-2.5">
-            {(stats.noiseExamples ?? []).map((n) => (
-                            <div key={n.id} className="flex gap-2.5">
+                              <div className="flex flex-col gap-3">
+            {(showAllNoise
+              ? stats.noiseExamples ?? []
+              : (stats.noiseExamples ?? []).slice(0, 6)
+            ).map((n) => (
+              <div key={n.id} className="flex gap-2.5">
                 <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-slate" />
-                <p className="text-xs leading-relaxed text-ink/70">{n.why}</p>
+                <div>
+                  <p className="text-xs leading-relaxed text-ink/70">{n.why}</p>
+                  {n.channel && (
+                    <p className="mt-0.5 text-[10px] text-slate">{n.channel}</p>
+                  )}
+                </div>
               </div>
             ))}
           </div>
+
+          {(stats.noiseExamples ?? []).length > 6 && (
+            <button
+              onClick={() => setShowAllNoise((v) => !v)}
+              className="mt-3 text-xs font-semibold text-ocean hover:underline"
+            >
+              {showAllNoise
+                ? "Show fewer"
+                : `Show all ${(stats.noiseExamples ?? []).length}`}
+            </button>
+          )}
+
           <p className="mt-3 text-xs text-slate">
             {stats.noise_dropped} of {stats.messages_in} messages were set aside. Every one
             of them is still searchable — nothing is deleted.
