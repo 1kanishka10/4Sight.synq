@@ -93,7 +93,7 @@ export function OpportunitiesSection() {
           {visible.map((o) => {
             const isSaved = saved.has(o.id);
             return (
-              <Card key={o.id} className="flex flex-col gap-3 p-5">
+                           <Card key={o.id} id={`item-${o.id}`} className="flex flex-col gap-3 p-5">
                 <div className="flex items-start justify-between gap-2">
                   <Badge tone="ocean">{o.category}</Badge>
                   <button
