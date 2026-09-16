@@ -173,5 +173,49 @@
       }
     ],
     "sourceCount": 2
+    },
+  {
+    "id": "o8",
+    "category": "Team",
+    "title": "SIH 2026 team looking for a member",
+    "eligibility": "First-years welcome. Basic coding knowledge asked for.",
+    "deadline": null,
+    "description": "A first-year team needs one more person for Smart India Hackathon 2026, willing to commit time across the hackathon.",
+    "whyHere": "Posted two days ago in an unofficial help group. No deadline, so it was nearly dropped as chatter - but an open team place is exactly the kind of thing a fresher never hears about.",
+    "confidence": "missing",
+    "uncertainty": "No deadline was given and no way to tell whether the place is still open. You would have to message the sender to find out.",
+    "deadlineText": "",
+    "sources": [
+      {
+        "id": "msg_020",
+        "channel": "Fresher Help Group",
+        "sender": "Student (first year, CS-AI)",
+        "sentAt": "2026-09-13T19:25",
+        "excerpt": "We need a dedicated person for our SIH 2026 team ... If you are interested and can commit to the team, please let me know!"
+      }
+    ],
+    "sourceCount": 1
+  },
+  {
+    "id": "o9",
+    "category": "Team",
+    "title": "SIH team with one spot open",
+    "eligibility": "Integration and frontend. JavaScript and Python.",
+    "deadline": null,
+    "description": "A different team looking for one more member for Smart India Hackathon, for integration and frontend work. DM the sender with an introduction and past projects.",
+    "whyHere": "Posted 29 August in an unofficial help group and never repeated. Seventeen days old, so likely filled - shown anyway rather than hidden.",
+    "confidence": "missing",
+    "uncertainty": "No deadline given, and the message is over two weeks old. The spot has probably gone.",
+    "deadlineText": "",
+    "sources": [
+      {
+        "id": "msg_019",
+        "channel": "Fresher Help Group",
+        "sender": "Student",
+        "sentAt": "2026-08-29T20:27",
+        "excerpt": "SIH Team - One Spot Open! We are looking for one more member ... integration + frontend ... DM me with a brief introduction and your relevant experience/projects."
+      }
+    ],
+    "sourceCount": 1
   }
 ]
