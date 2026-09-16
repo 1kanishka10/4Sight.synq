@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Clock3, User, Link as LinkIcon, FileText, HelpCircle } from "lucide-react";
+import { Clock3, User, Link as LinkIcon, FileText, HelpCircle, MessageSquare } from "lucide-react";
 import { Card, Badge, Drawer } from "../components/ui";
 import deadlines from "../data/deadlines.json";
 import { authorityOf } from "../../lib/authority";
@@ -102,7 +102,34 @@ export function DeadlinesSection() {
             <DetailRow icon={Clock3} label="Possible clash" value={selected.clashNote} />
             <DetailRow icon={FileText} label="Submission" value={selected.submission} />
             <DetailRow icon={User} label="Contact" value={selected.contact} />
-
+            {selected.sources?.length > 0 && (
+              <div>
+                <p className="mb-2 flex items-center gap-1.5 text-xs font-semibold text-slate">
+                  <MessageSquare size={13} />
+                  Where this came from — {selected.sources.length}{" "}
+                  {selected.sources.length === 1 ? "message" : "messages"}
+                </p>
+                <div className="flex flex-col gap-2">
+                  {selected.sources.map((s) => (
+                    <div key={s.id} className="rounded-xl border border-slate/20 p-3">
+                      <p className="mb-1 text-[11px] text-slate">
+                        {s.channel} · {s.sender}
+                        {s.sentAt
+                          ? " · " +
+                            new Date(s.sentAt).toLocaleString(undefined, {
+                              day: "numeric",
+                              month: "short",
+                              hour: "2-digit",
+                              minute: "2-digit",
+                            })
+                          : ""}
+                      </p>
+                      <p className="text-xs leading-relaxed text-ink/80">"{s.excerpt}"</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
                         {href(selected.actionLink) ? (
               <a
                 href={href(selected.actionLink)}
