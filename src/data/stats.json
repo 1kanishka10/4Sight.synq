@@ -2,11 +2,11 @@
   "messages_in": 50,
   "threads": 5,
   "duplicates_collapsed": 8,
-  "noise_dropped": 22,
+  "noise_dropped": 20,
   "now": 5,
-  "discover": 7,
+  "discover": 9,
   "missed": 8,
-  "items_total": 20,
+  "items_total": 22,
   "noiseExamples": [
     {
       "id": "msg_003",
@@ -101,16 +101,6 @@
       "id": "msg_011",
       "why": "LEAN IN community invitation. Mentions orientation, recruitment and a hackathon with no date for any.",
       "channel": "Unofficial WhatsApp Broadcast"
-    },
-    {
-      "id": "msg_019",
-      "why": "SIH team spot posted 29 August, no deadline, almost certainly filled.",
-      "channel": "Fresher Help Group"
-    },
-    {
-      "id": "msg_020",
-      "why": "Another SIH team looking for a member. No deadline, and no way to tell whether the spot is still open.",
-      "channel": "Fresher Help Group"
     }
   ]
 }
