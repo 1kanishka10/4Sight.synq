@@ -61,4 +61,7 @@ export default function App() {
         </main>
       </div>
 
-      <MobileNav active={tab}
+      <MobileNav active={tab} onChange={setTab} />
+    </div>
+  );
+}
