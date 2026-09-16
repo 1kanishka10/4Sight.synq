@@ -114,7 +114,7 @@ export function CalendarSection({ onNavigate }) {
         </p>
       </header>
 
-      <div className="grid gap-4 lg:grid-cols-[1fr_20rem]">
+           <div className="grid gap-4 xl:grid-cols-[1fr_21rem]">
         <Card className="p-4 lg:p-5">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="font-display text-xl font-bold text-ink">
