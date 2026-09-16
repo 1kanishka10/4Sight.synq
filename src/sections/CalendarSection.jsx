@@ -178,7 +178,7 @@ export function CalendarSection({ onNavigate }) {
                   </span>
 
                   <div className="mt-1 flex flex-col gap-1">
-                    {items.slice(0, 2).map((e) => (
+                    {items.slice(0, 1).map((e) => (
                       <span
                         key={e.id}
                         className={`truncate rounded px-1 py-0.5 text-[9px] font-medium text-ink/90 ${CHIP[e.tone]}`}
@@ -186,8 +186,8 @@ export function CalendarSection({ onNavigate }) {
                         {e.title}
                       </span>
                     ))}
-                    {items.length > 2 && (
-                      <span className="text-[9px] text-slate">+{items.length - 2} more</span>
+                    {items.length > 1 && (
+                      <span className="text-[9px] text-slate">+{items.length - 1} more</span>
                     )}
                   </div>
 
