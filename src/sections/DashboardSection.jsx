@@ -41,7 +41,7 @@ export function DashboardSection({ onNavigate }) {
     <section className="flex flex-col gap-8">
       <header>
         <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-sky">
-          Monday, 15 September
+                    Snapshot · 15 September 2026
         </p>
         <h1 className="font-display text-3xl font-bold leading-tight text-ink lg:text-[2.6rem]">
           {stats.messages_in} messages in.{" "}
