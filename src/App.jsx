@@ -8,6 +8,7 @@ import { OpportunitiesSection } from "./sections/OpportunitiesSection";
 import { ScheduleSection } from "./sections/ScheduleSection";
 import { SocietiesSection } from "./sections/SocietiesSection";
 import { SearchSection } from "./sections/SearchSection";
+import { DashboardSection } from "./sections/DashboardSection";
 
 const SECTION_LABEL = {
   deadlines: "Urgent Deadlines",
