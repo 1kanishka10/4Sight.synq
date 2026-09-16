@@ -4,6 +4,7 @@ import { Sidebar, MobileNav } from "./components/Sidebar";
 import { ImportButton } from "./components/ImportButton";
 import { SynqMark } from "./components/SynqMark";
 import { GlobalSearch } from "./components/GlobalSearch";
+import { NotificationBell } from "./components/NotificationBell";
 import { DashboardSection } from "./sections/DashboardSection";
 import { DeadlinesSection } from "./sections/DeadlinesSection";
 import { OpportunitiesSection } from "./sections/OpportunitiesSection";
@@ -39,13 +40,7 @@ export default function App() {
 
           <div className="flex items-center gap-2">
             <ImportButton />
-            <button
-              className="relative rounded-full p-2 text-slate hover:bg-white"
-              aria-label="Notifications"
-            >
-              <Bell size={18} />
-              <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-critical" />
-            </button>
+                        <NotificationBell onNavigate={setTab} />
           </div>
         </header>
 
