@@ -40,8 +40,9 @@ export function DeadlinesSection() {
           const urgency = urgencyOf(d.dueInHours);
           const left = countdown(d.dueInHours);
           return (
-            <Card
+                        <Card
               key={d.id}
+              id={`item-${d.id}`}
               className="cursor-pointer p-4 transition-transform hover:-translate-y-0.5"
               onClick={() => setSelected(d)}
             >
