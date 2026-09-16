@@ -244,7 +244,7 @@ export function OpportunitiesSection() {
 
             <div className="flex flex-col gap-2 border-t border-slate/15 pt-4">
               {href(open.actionLink) ? (
-                
+                <a
                   href={href(open.actionLink)}
                   target="_blank"
                   rel="noreferrer"
