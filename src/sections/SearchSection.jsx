@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { Search as SearchIcon, AlertTriangle, Layers } from "lucide-react";
 import { Card, Badge } from "../components/ui";
-import announcements from "../data/announcements.json";
+import { useData } from "../data/DataContext";
 
 const ANY_DEPT = "All Departments";
 const ANY_YEAR = "All Years";
@@ -9,17 +9,7 @@ const ANY_YEAR = "All Years";
 // "CSE-AI, ECE-AI" is two departments in one field.
 const listOf = (value) => (value ? String(value).split(",").map((s) => s.trim()) : []);
 
-// Options are derived from the data, so every option returns results.
-const optionsFor = (key, universal) => [
-  "All",
-  ...[...new Set(announcements.flatMap((a) => listOf(a[key])))]
-    .filter((v) => v && v !== universal)
-    .sort(),
-];
 
-const DEPARTMENTS = optionsFor("department", ANY_DEPT);
-const YEARS = optionsFor("year", ANY_YEAR);
-const TYPES = optionsFor("type", null);
 
 // An item tagged "All Departments" / "All Years" matches every choice.
 const matches = (value, picked, universal) =>
@@ -32,6 +22,22 @@ export function SearchSection() {
   const [dept, setDept] = useState("All");
   const [year, setYear] = useState("All");
   const [type, setType] = useState("All");
+    const { announcements } = useData();
+
+  // Options are derived from the data, so every option returns results.
+  const { DEPARTMENTS, YEARS, TYPES } = useMemo(() => {
+    const optionsFor = (key, universal) => [
+      "All",
+      ...[...new Set(announcements.flatMap((a) => listOf(a[key])))]
+        .filter((v) => v && v !== universal)
+        .sort(),
+    ];
+    return {
+      DEPARTMENTS: optionsFor("department", ANY_DEPT),
+      YEARS: optionsFor("year", ANY_YEAR),
+      TYPES: optionsFor("type", null),
+    };
+  }, [announcements]);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -49,8 +55,7 @@ export function SearchSection() {
       }
       return true;
     });
-  }, [query, dept, year, type]);
-
+   }, [announcements, query, dept, year, type]);
   return (
     <section>
       <header className="mb-6">
