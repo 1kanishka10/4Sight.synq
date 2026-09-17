@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useMemo, useState } from "react";
 import {
   Bookmark,
   BookmarkCheck,
@@ -12,29 +12,9 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { Card, Badge, Drawer } from "../components/ui";
-import opportunities from "../data/opportunities.json";
 import { authorityOf, priorityOf } from "../../lib/authority";
-const STORE_KEY = "synq.saved.opportunities";
+import { useData } from "../data/DataContext";
 
-function loadSaved() {
-  try {
-    const raw = window.localStorage.getItem(STORE_KEY);
-    return new Set(raw ? JSON.parse(raw) : []);
-  } catch {
-    return new Set();
-  }
-}
-
-// Who announced it, then how soon it closes. An Admin Office notice with no date
-// outranks a society post that is merely dated.
-const sorted = [...opportunities].sort((a, b) => {
-  const byPriority = priorityOf(b) - priorityOf(a);
-  if (byPriority !== 0) return byPriority;
-  if (!a.deadline && !b.deadline) return 0;
-  if (!a.deadline) return 1;
-  if (!b.deadline) return -1;
-  return new Date(a.deadline) - new Date(b.deadline);
-});
 function dueLabel(o) {
   if (!o.deadline) return o.deadlineText || "No deadline stated";
   const d = new Date(o.deadline);
@@ -60,27 +40,32 @@ function href(link) {
 }
 
 export function OpportunitiesSection() {
-  const [saved, setSaved] = useState(loadSaved);
+  const { opportunities, savedIds, saveOpportunity, unsaveOpportunity } = useData();
   const [onlySaved, setOnlySaved] = useState(false);
   const [open, setOpen] = useState(null);
 
-  useEffect(() => {
-    try {
-      window.localStorage.setItem(STORE_KEY, JSON.stringify([...saved]));
-    } catch {
-      // Private browsing or blocked storage — saving just won't persist.
-    }
-  }, [saved]);
+  const sorted = useMemo(() => {
+    return [...(opportunities || [])].sort((a, b) => {
+      const byPriority = priorityOf(b) - priorityOf(a);
+      if (byPriority !== 0) return byPriority;
+      if (!a.deadline && !b.deadline) return 0;
+      if (!a.deadline) return 1;
+      if (!b.deadline) return -1;
+      return new Date(a.deadline) - new Date(b.deadline);
+    });
+  }, [opportunities]);
+
+  const isSaved = (id) => savedIds.includes(id);
 
   const toggle = (id) => {
-    setSaved((prev) => {
-      const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
-      return next;
-    });
+    if (isSaved(id)) {
+      unsaveOpportunity(id);
+    } else {
+      saveOpportunity(id);
+    }
   };
 
-  const visible = onlySaved ? sorted.filter((o) => saved.has(o.id)) : sorted;
+  const visible = onlySaved ? sorted.filter((o) => isSaved(o.id)) : sorted;
 
   return (
     <section>
@@ -101,7 +86,7 @@ export function OpportunitiesSection() {
           }
         >
           <BookmarkCheck size={14} />
-          Saved ({saved.size})
+          Saved ({savedIds.length})
         </button>
       </header>
 
@@ -121,7 +106,7 @@ export function OpportunitiesSection() {
       ) : (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {visible.map((o) => {
-            const isSaved = saved.has(o.id);
+            const saved = isSaved(o.id);
             return (
               <Card
                 key={o.id}
@@ -130,7 +115,7 @@ export function OpportunitiesSection() {
                 className="group flex cursor-pointer flex-col gap-3 p-5 transition-transform hover:-translate-y-0.5"
               >
                 <div className="flex items-start justify-between gap-2">
-                                   <span className="flex flex-wrap items-center gap-1.5">
+                  <span className="flex flex-wrap items-center gap-1.5">
                     <Badge tone="ocean">{o.category}</Badge>
                     {authorityOf(o).label && <Badge tone="medium">{authorityOf(o).label}</Badge>}
                   </span>
@@ -139,10 +124,10 @@ export function OpportunitiesSection() {
                       e.stopPropagation();
                       toggle(o.id);
                     }}
-                    aria-label={isSaved ? "Remove from saved" : "Save for later"}
-                    className={isSaved ? "text-ocean" : "text-slate hover:text-ocean"}
+                    aria-label={saved ? "Remove from saved" : "Save for later"}
+                    className={saved ? "text-ocean" : "text-slate hover:text-ocean"}
                   >
-                    {isSaved ? <BookmarkCheck size={18} /> : <Bookmark size={18} />}
+                    {saved ? <BookmarkCheck size={18} /> : <Bookmark size={18} />}
                   </button>
                 </div>
 
@@ -268,13 +253,13 @@ export function OpportunitiesSection() {
               <button
                 onClick={() => toggle(open.id)}
                 className={
-                  saved.has(open.id)
+                  isSaved(open.id)
                     ? "inline-flex items-center justify-center gap-2 rounded-full border border-ocean px-5 py-2.5 text-sm font-semibold text-ocean"
                     : "inline-flex items-center justify-center gap-2 rounded-full border border-slate/30 px-5 py-2.5 text-sm font-semibold text-ink"
                 }
               >
-                {saved.has(open.id) ? <BookmarkCheck size={15} /> : <Bookmark size={15} />}
-                {saved.has(open.id) ? "Saved" : "Save for later"}
+                {isSaved(open.id) ? <BookmarkCheck size={15} /> : <Bookmark size={15} />}
+                {isSaved(open.id) ? "Saved" : "Save for later"}
               </button>
             </div>
           </div>
