@@ -6,7 +6,7 @@
 // key is read — never expose it to the browser.
 
 import { buildExtractionPrompt } from "../lib/prompt.js";
-import { threadItems } from "../lib/thread.js";
+import { thread } from "../lib/thread.js";
 import { rank, findClashes } from "../lib/rank.js";
 
 const GEMINI_URL =
@@ -86,7 +86,7 @@ export default async function handler(req, res) {
 
     // Plain JS from here — no AI. Thread duplicates/updates, rank and
     // assign lanes, then flag same-day clashes.
-    const threaded = threadItems(rawItems);
+    const threaded = await thread(rawItems);
     const ranked = rank(threaded, profile);
     const finalItems = findClashes(ranked);
 
