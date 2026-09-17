@@ -24,7 +24,8 @@ function href(link) {
 }
 
 export function DeadlinesSection() {
-  const [selected, setSelected] = useState(null);
+   const [selected, setSelected] = useState(null);
+  const { deadlines } = useData();
   const sorted = [...deadlines].sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99));
 
   return (
