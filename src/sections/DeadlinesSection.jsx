@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Clock3, User, Link as LinkIcon, FileText, HelpCircle, MessageSquare } from "lucide-react";
 import { Card, Badge, Drawer } from "../components/ui";
-import deadlines from "../data/deadlines.json";
+import { useData } from "../data/DataContext";
 import { authorityOf } from "../../lib/authority";
 
 function urgencyOf(hours) {
