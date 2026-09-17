@@ -86,7 +86,7 @@ export default async function handler(req, res) {
 
     // Plain JS from here — no AI. Thread duplicates/updates, rank and
     // assign lanes, then flag same-day clashes.
-    const threaded = await threadItems(rawItems);
+    const threaded = await thread(rawItems);
     const ranked = rank(threaded, profile);
     const finalItems = findClashes(ranked);
 
