@@ -1,11 +1,9 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { AlertTriangle, CalendarDays, HelpCircle } from "lucide-react";
 import { Card, Badge } from "../components/ui";
-import deadlines from "../data/deadlines.json";
+import { useData } from "../data/DataContext";
 
-// Only items with a confirmed time can be placed on a timeline or compared.
-const dated = deadlines.filter((d) => d.dueInHours != null);
-const undated = deadlines.filter((d) => d.dueInHours == null);
+
 
 // Group deadlines whose due-times land within 6 hours of each other.
 function findClashes(items, toleranceHours = 6) {
@@ -35,6 +33,16 @@ function whenLabel(hours) {
 }
 
 export function ScheduleSection() {
+  // Only items with a confirmed time can be placed on a timeline or compared.
+  const { dated, undated } = useMemo(
+    
+    () => ({
+      dated: deadlines.filter((d) => d.dueInHours != null),
+      undated: deadlines.filter((d) => d.dueInHours == null),
+    }),
+    [deadlines]
+  );
+  
   const clashes = findClashes(dated);
   const flagged = deadlines.filter((d) => d.clashNote);
   const timeline = [
