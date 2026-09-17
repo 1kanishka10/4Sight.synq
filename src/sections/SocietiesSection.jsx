@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { Users } from "lucide-react";
 import clsx from "clsx";
 import { Card, Modal } from "../components/ui";
-import societies from "../data/societies.json";
+import { useData } from "../data/DataContext";
 
-// Built from the data, so every chip returns something.
-const CATEGORIES = ["All", ...[...new Set(societies.map((s) => s.category))].sort()];
 export function SocietiesSection() {
   const [category, setCategory] = useState("All");
   const [selected, setSelected] = useState(null);
+  const { societies } = useData();
 
+  // Built from the data, so every chip returns something.
+  const CATEGORIES = useMemo(
+    () => ["All", ...[...new Set(societies.map((s) => s.category))].sort()],
+    [societies]
+  );
   const filtered = category === "All" ? societies : societies.filter((s) => s.category === category);
 
   return (
